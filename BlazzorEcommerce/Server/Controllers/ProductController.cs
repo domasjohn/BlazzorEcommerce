@@ -6,19 +6,26 @@ namespace BlazzorEcommerce.Server.Controllers
     [Route("api/[controller]")]
     [ApiController]
     public class ProductController : ControllerBase
-    {
-        private readonly DataContext context;
+    {        
+        private readonly IProductService productService;
 
-        public ProductController(DataContext context)
+        public ProductController(IProductService productService)
         {
-            this.context = context;
+            this.productService = productService;
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<Product>>> GetProduct()
+        public async Task<ActionResult<ServiceResponse<List<Product>>>> GetProducts()
         {
-            var products = await context.Products.ToListAsync();
-            return Ok(products);
+            var result = await productService.GetProductAsync();
+            return Ok(result);
+        }
+
+        [HttpGet("{productId}")]
+        public async Task<ActionResult<ServiceResponse<Product>>> GetProduct(int productId)
+        {
+            var result = await productService.GetProductAsync(productId);
+            return Ok(result);
         }
     }
 }
