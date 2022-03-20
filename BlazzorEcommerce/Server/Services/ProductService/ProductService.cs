@@ -32,7 +32,7 @@
         {
             var response = new ServiceResponse<List<Product>>
             {
-                Data = await context.Products.Include(p => p.Variants).ToListAsync()
+                Data = await this.context.Products.Include(p => p.Variants).ToListAsync()
             };
 
             return response;
@@ -42,7 +42,7 @@
         {
             var response = new ServiceResponse<List<Product>>
             {
-                Data = await context.Products
+                Data = await this.context.Products
                     .Where(p => p.Category.Url.ToLower().Equals(categoryUrl.ToLower()))
                     .Include(p => p.Variants)
                     .ToListAsync()
@@ -98,11 +98,11 @@
         private async Task<List<Product>> FindProductsBySearchText(string searchText)
         {
             return await this.context.Products
-                            .Where(p => p.Title.ToLower().Contains(searchText.ToLower())
-                            ||
-                            p.Description.ToLower().Contains(searchText.ToLower()))
-                            .Include(p => p.Variants)
-                            .ToListAsync();
+                                        .Where(p => p.Title.ToLower().Contains(searchText.ToLower())
+                                        ||
+                                        p.Description.ToLower().Contains(searchText.ToLower()))
+                                        .Include(p => p.Variants)
+                                        .ToListAsync();
         }
     }
 }

@@ -37,7 +37,7 @@
             return result.Data;
         }
 
-        public async Task SearchProductss(string searchText)
+        public async Task SearchProducts(string searchText)
         {
             var result = await this.http
                 .GetFromJsonAsync<ServiceResponse<List<Product>>>($"api/product/search{searchText}");

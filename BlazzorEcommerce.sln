@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazzorEcommerce.Server", "BlazzorEcommerce\Server\BlazzorEcommerce.Server.csproj", "{115D1720-D54A-46F4-97DE-1B0AC4EF6B5F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazzorEcommerce.Server", "BlazzorEcommerce\Server\BlazzorEcommerce.Server.csproj", "{115D1720-D54A-46F4-97DE-1B0AC4EF6B5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazzorEcommerce.Client", "BlazzorEcommerce\Client\BlazzorEcommerce.Client.csproj", "{88B042E9-AF52-4A69-883F-EABFBCD5F426}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazzorEcommerce.Client", "BlazzorEcommerce\Client\BlazzorEcommerce.Client.csproj", "{88B042E9-AF52-4A69-883F-EABFBCD5F426}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazzorEcommerce.Shared", "BlazzorEcommerce\Shared\BlazzorEcommerce.Shared.csproj", "{3BC26BB7-CAA9-41A0-A7DF-11407BBE7999}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazzorEcommerce.Shared", "BlazzorEcommerce\Shared\BlazzorEcommerce.Shared.csproj", "{3BC26BB7-CAA9-41A0-A7DF-11407BBE7999}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
