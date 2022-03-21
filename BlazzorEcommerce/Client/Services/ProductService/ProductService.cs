@@ -22,7 +22,7 @@
         public async Task GetProducts(string? categoryUrl = null)
         {
             var result = categoryUrl == null ?
-                await http.GetFromJsonAsync<ServiceResponse<List<Product>>>("api/product") :
+                await http.GetFromJsonAsync<ServiceResponse<List<Product>>>("api/product/featured") :
                 await http.GetFromJsonAsync<ServiceResponse<List<Product>>>($"api/product/category/{categoryUrl}");
             if (result != null && result.Data != null)
                 Products = result.Data;
@@ -33,14 +33,14 @@
         public async Task<List<string>> GetProductSearchSuggestions(string searchText)
         {
             var result = await this.http
-                .GetFromJsonAsync<ServiceResponse<List<string>>>($"api/product/searchsuggestions{searchText}");
+                .GetFromJsonAsync<ServiceResponse<List<string>>>($"api/product/searchsuggestions/{searchText}");
             return result.Data;
         }
 
         public async Task SearchProducts(string searchText)
         {
             var result = await this.http
-                .GetFromJsonAsync<ServiceResponse<List<Product>>>($"api/product/search{searchText}");
+                .GetFromJsonAsync<ServiceResponse<List<Product>>>($"api/product/search/{searchText}");
             if (result != null && result.Data != null)
                 Products = result.Data;
             if (Products.Count == 0) Message = "No products found.";

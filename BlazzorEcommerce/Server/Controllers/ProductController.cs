@@ -47,5 +47,12 @@ namespace BlazzorEcommerce.Server.Controllers
             var result = await productService.GetProductSearchSuggestions(searchText);
             return Ok(result);
         }
+
+        [HttpGet("featured")]
+        public async Task<ActionResult<ServiceResponse<List<Product>>>> GetFeaturedProducts()
+        {
+            var result = await productService.GetFeaturedProducts();
+            return Ok(result);
+        }
     }
 }
